@@ -1,27 +1,27 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
 const authors = [
   {
-    id: 'cory-house',
-    firstName: 'Cory',
-    lastName: 'House'
+    id: "cory-house",
+    firstName: "Cory",
+    lastName: "House",
   },
   {
-    id: 'scott-allen',
-    firstName: 'Scott',
-    lastName: 'Allen'
+    id: "scott-allen",
+    firstName: "Scott",
+    lastName: "Allen",
   },
   {
-    id: 'dan-wahlin',
-    firstName: 'Dan',
-    lastName: 'Wahlin'
-  }
+    id: "dan-wahlin",
+    firstName: "Dan",
+    lastName: "Wahlin",
+  },
 ];
 
 //This would be performed on the server in a real app. Just stubbing in.
 const generateId = (author) => {
-  return author.firstName.toLowerCase() + '-' + author.lastName.toLowerCase();
+  return author.firstName.toLowerCase() + "-" + author.lastName.toLowerCase();
 };
 
 // CREATES A NEW USER
@@ -38,8 +38,8 @@ const generateId = (author) => {
 });*/
 
 // RETURNS ALL THE USERS IN THE DATABASE
-router.get('/', function (req, res) {
-    res.status(200).send(authors);
+router.get("/", function (req, res) {
+  res.status(200).send(authors);
 });
 
 // GETS A SINGLE USER FROM THE DATABASE
@@ -66,6 +66,5 @@ router.put('/:id', function (req, res) {
         res.status(200).send(user);
     });
 });*/
-
 
 module.exports = router;
